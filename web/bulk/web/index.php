@@ -23,6 +23,10 @@ if ($_SESSION['user'] == 'admin') {
             break;
         case 'unsuspend': $cmd='v-unsuspend-domain';
             break;
+        case 'enable-letsencrypt': $cmd="v-add-letsencrypt-domain";
+            break;
+        case 'disable-letsencrypt': $cmd="v-delete-web-domain-ssl";
+            break;
         default: header("Location: /list/web/"); exit;
     }
 } else {
