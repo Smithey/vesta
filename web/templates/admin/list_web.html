@@ -34,6 +34,8 @@
                     <option value="delete"><?=__('delete')?></option>
                     <option value="enable-letsencrypt"><?=__('enable letsencrypt')?></option>
                     <option value="disable-letsencrypt"><?=__('disable letsencrypt')?></option>
+                    <option value="ssl-home-html"><?=__('Change SSL home to public_html')?></option>
+                    <option value="ssl-home-shtml"><?=__('Change SSL home to public_shtml')?></option>
                   </select>
                 </div>
                 <input type="submit" class="l-sort-toolbar__filter-apply" value=""/>
@@ -316,12 +318,28 @@ sort-name="<?=$key?>"  sort-bandwidth="<?=$data[$key]['U_BANDWIDTH']?>" sort-dis
                 </td>
                 <td>
                   <? if($ftp_user == 'no'){ ?>
-                    <div class="l-unit__stat-cols clearfix last disabled"><?=__('Additional FTP Account')?></div>
+                    <div class="l-unit__stat-cols clearfix disabled"><?=__('Additional FTP Account')?></div>
                   <? } else {?>
                     <div class="l-unit__stat-cols clearfix last">
                       <div class="l-unit__stat-col l-unit__stat-col--left"><?=__('Additional FTP Account')?>:</div>
                       <div class="l-unit__stat-col l-unit__stat-col--right">
                         <b><?=$ftp_user?></b>
+                      </div>
+                    </div>
+                  <? } ?>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                </td>
+                <td>
+                  <? if($ssl_home == ''){ ?>
+                    <div class="l-unit__stat-cols clearfix last disabled"><?=__('SSL Home')?></div>
+                  <? } else {?>
+                    <div class="l-unit__stat-cols clearfix last">
+                      <div class="l-unit__stat-col l-unit__stat-col--left"><?=__('SSL Home')?>:</div>
+                      <div class="l-unit__stat-col l-unit__stat-col--right">
+                        <b><?=$ssl_home?></b>
                       </div>
                     </div>
                   <? } ?>
